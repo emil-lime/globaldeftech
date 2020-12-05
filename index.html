@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sentiment Analysis</title>
+</head>
+<body>
+    {% if err_msg %}
+        <p>{{ err_msg }}</p>
+    {% endif %}
+
+    <div class="formwrapper">
+        <h2 class="title">Insert a link to a YouTube video</h2>
+        <form method="POST" action="/">
+            <div class="form-field">
+                <label for="url">URL</label>
+                <input type="text" name="url">
+            </div>
+            <input type="submit">
+        </form>
+      </div>
+
+      {% if comments %}
+        <div>
+            {% for comment in comments %}
+                <p>{{ comment }}</p>
+            {% endfor %}
+        </div>
+      {% endif %}
+</body>
+</html>
